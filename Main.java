@@ -4,9 +4,10 @@ public class Main
 {
   public static void main(String[] args)
   {
+   // Problem 1 
     String str = "Peter Piper picked a pack of pickle peppers.";
     int count = 0;
-    for (i = 0; i < str.length() - 1; i++)
+    for (int i = 0; i < str.length() - 1; i++)
     {
       String letter = str.substring(i, i+2);
       if (letter.equals("pa")||letter.equals("pe")||letter.equals("pi")||letter.equals("po")||letter.equals("pu"))
@@ -16,23 +17,41 @@ public class Main
     }
   System.out.println("I found p and a vowel " + count + "times.");
 
+// Problem 2
+    Scanner sc = new Scanner(System.in);
+String input;
+String other = "";
 
-    String s = "Peter Piper picked a pack of pickle peppers.";    
-    String s2 = "";
-    final String badLetters = "etaio"; 
-    for (i = 0; i < s.length(); i++)
+System.out.println("Input String:");
+input = sc.nextLine();
+
+for (int i = 0; i < input.length(); i++)
+{
+  String ch = input.substring(i, i+1);
+  if (! (ch.equals("e") || ch.equals("t") || ch.equals("a") || ch.equals("i") || ch.equals("o")) )
+  {
+    other += ch;
+  }
+}
+System.out.println(other);
+
+  //Problem 3
+  Scanner user = new Scanner(System.in);
+  System.out.println("Enter two strings:");
+  String ans1 = user.nextLine();
+  String ans2 = user.nextLine();
+  String output = "";
+  if (ans1.length() == ans2.length())
+  {
+    for (int i = ans1.length()-1; i >= 0; i--)
     {
-      String letter = s.substring(i, i+1);
-     if (badLetters.indexOf(letter) == -1)
-     {
-      s2 += letter;
-     }
+      output += ans2.substring(i, i+1) + ans1.substring(i, i+1);
     }
   }
-
-  public static boolean isPrime(int N)
+  else
   {
-    // TODO: Replace and write your code below
-    return false;
+    System.out.println("error");
+  } 
+  System.out.println(output); 
   }
 }
